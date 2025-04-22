@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "app1.fullname" . }}
   labels:
+    foo: bar
     {{- include "app1.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
